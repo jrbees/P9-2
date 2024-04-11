@@ -40,23 +40,47 @@ bool hasDuplicates(int values[], int size) {
 }
 
 int main() {
-    // Example usage:
-    int arrWithDuplicates[] = { 1, 2, 2, 4, 5 }; // Example array with duplicates
-    int arrWithoutDuplicates[] = { 1, 2, 3, 4, 5 }; // Example array without duplicates
-    int size = sizeof(arrWithDuplicates) / sizeof(arrWithDuplicates[0]); // Calculating size of array
+    const int SIZE = 6;
+    int testArray[SIZE];
+
+    // Acquiring testing data for the array
+    cout << "Enter " << SIZE << " integers:" << endl;
+    for (int i = 0; i < SIZE; ++i) {
+        cout << "Enter integer #" << i << ": ";
+        cin >> testArray[i];
+    }
 
     // Testing isSortedIncreasing
-    cout << "Is sorted increasing? " << boolalpha << isSortedIncreasing(arrWithDuplicates, size) << endl;
+    if (isSortedIncreasing(testArray, SIZE)) {
+        cout << "The data are increasing." << endl;
+    }
+    else {
+        cout << "The data are not increasing." << endl;
+    }
 
     // Testing isSortedDecreasing
-    cout << "Is sorted decreasing? " << boolalpha << isSortedDecreasing(arrWithDuplicates, size) << endl;
+    if (isSortedDecreasing(testArray, SIZE)) {
+        cout << "The data are decreasing." << endl;
+    }
+    else {
+        cout << "The data are not decreasing." << endl;
+    }
 
     // Testing hasAdjacentDuplicates
-    cout << "Has adjacent duplicates? " << boolalpha << hasAdjacentDuplicates(arrWithDuplicates, size) << endl;
+    if (hasAdjacentDuplicates(testArray, SIZE)) {
+        cout << "The data has adjacent duplicates." << endl;
+    }
+    else {
+        cout << "The data does not have adjacent duplicates." << endl;
+    }
 
-    // Testing hasDuplicates true and false
-    cout << "Has duplicates? " << boolalpha << hasDuplicates(arrWithDuplicates, size) << endl;
-    cout << "Has duplicates? " << boolalpha << hasDuplicates(arrWithoutDuplicates, size) << endl;
+    // Testing hasDuplicates
+    if (hasDuplicates(testArray, SIZE)) {
+        cout << "The data has duplicates." << endl;
+    }
+    else {
+        cout << "The data does not have duplicates." << endl;
+    }
 
     return 0;
 }
